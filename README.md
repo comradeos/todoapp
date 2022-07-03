@@ -8,4 +8,4 @@ Todo application, made with Python, Flask, MySQL, SQLAlchemy, Docker.
 4. Open Browser
 5. Go http://127.0.0.1:5002/
 6. Login with login/password: root/root 
-7.  http://127.0.0.1:5001/
+7. Go http://127.0.0.1:5001/
