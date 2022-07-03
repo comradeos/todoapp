@@ -14,7 +14,7 @@ User Interface: https://semantic-ui.com
 
 --------------------------------------------------------
 
-Hot to run the application:
+How to run the application:
 1. Open Terminal
 2. Go Project Folder
 3. run "docker-compose up --build"
