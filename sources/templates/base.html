@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <title>Todo App</title>
+</head>
+
+<body>
+    <div class="ui container">
+
+        <h1 class="ui center aligned header">Todo App</h1>
+        <form action="{{url_for('add')}}" method="post" class="ui form">
+            <div class="field">
+                <label for="title">Todo Title</label>
+                <input style="margin:10px 0;" type="text" name="title" placeholder="Enter Todo..." required>
+                <br>
+                <button type="submit" class="ui green button">Add</button>
+            </div>
+        </form>
+
+        {% for item in todo_list %}
+        <div class="ui segment">
+            <p class="ui big header">{{item.id}} {{item.title}}</p>
+            {% if item.complete == False %}
+            <span class="ui grey label">Not Completed</span>
+            {% else %}
+            <span class="ui green label">Completed</span>
+            {% endif %}
+            <a href="{{url_for('update', todo_id=item.id)}}" class="ui blue button">Update</a>
+            <a href="{{url_for('delete', todo_id=item.id)}}" class="ui red button">Delete</a>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</body>
+
+</html>
